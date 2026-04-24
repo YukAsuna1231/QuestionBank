@@ -1,4 +1,5 @@
 package com.antiquemall.questionbank.service;
 
-public class UserService {
+public interface UserService {
+    boolean register(String username, String password);
 }

@@ -1,9 +1,11 @@
 package com.antiquemall.questionbank.entity;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
+@TableName("question")
 public class Question {
     private Long id;
     private String title;

@@ -1,4 +1,8 @@
 package com.antiquemall.questionbank.service;
 
-public class QuestionService {
+import com.antiquemall.questionbank.entity.Question;
+import java.util.List;
+
+public interface QuestionService{
+    List<Question> getQuestionList();
 }
