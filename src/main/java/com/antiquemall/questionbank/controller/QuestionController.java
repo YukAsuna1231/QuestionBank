@@ -3,13 +3,11 @@ package com.antiquemall.questionbank.controller;
 
 import com.antiquemall.questionbank.common.BaseResponse;
 import com.antiquemall.questionbank.common.ResultUtils;
+import com.antiquemall.questionbank.dto.QuestionAddRequest;
 import com.antiquemall.questionbank.entity.Question;
 import com.antiquemall.questionbank.service.QuestionService;
 import jakarta.annotation.Resource;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,5 +28,11 @@ public class QuestionController {
     public BaseResponse <Question> getQuestionById(@PathVariable Long id) {
         Question question = questionService.getQuestionById(id);
         return ResultUtils.success(question);
+    }
+
+    @PostMapping("/add")
+    public BaseResponse <Boolean> addQuestion(@RequestBody QuestionAddRequest request) {
+        boolean result = questionService.addQuestion(request);
+        return ResultUtils.success(result);
     }
 }

@@ -8,7 +8,9 @@ public class Submission {
     private Long id;
     private Long userId;
     private Long questionId;
-    private String codeContent;
-    private String status;
+    private String userAnswer;
+    private String isCorrect;
+    private String score;
+    private String JudgeResult;
     private LocalDateTime createTime;
 }
