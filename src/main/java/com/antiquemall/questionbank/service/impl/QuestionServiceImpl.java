@@ -16,4 +16,8 @@ public class QuestionServiceImpl  implements QuestionService {
     public List<Question> getQuestionList() {
         return questionMapper.selectList(null);
     }
+    @Override
+    public  Question getQuestionById(Long id) {
+        return questionMapper.selectById(id);
+    }
 }
